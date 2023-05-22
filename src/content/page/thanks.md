@@ -1,10 +1,10 @@
 ---
-title: Form Submitted
-image: /upload/spaceship.png
+title: "Det er modtaget "
+image: ""
 url: submitted
 eleventyNavigation:
   excerpt: ""
 layout: page/page.njk
 eleventyExcludeFromCollections: false
 ---
-The message is sent :) 
+Der samles til bunke 
