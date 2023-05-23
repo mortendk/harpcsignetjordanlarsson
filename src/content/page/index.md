@@ -24,7 +24,7 @@ components:
           - checked: false
             title: NU
           - checked: false
-            title: På Mandag tak
+            title: Lige efter min Latte Med havre mælk er blevet kølig
       - type: textarea
         title: "Mit sublime råd til PC er:"
         required: true
