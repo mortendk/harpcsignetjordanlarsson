@@ -33,6 +33,21 @@ components:
         required: true
         title: Fra
         placeholder: Fodbold oraklet på Nedre C
+      - type: options
+        inputtype: Dropdown
+        required: false
+        option:
+          - checked: false
+            title: Neder Hipster
+          - checked: false
+            title: Østerbro (A)
+          - checked: false
+            title: Lille Nørrebro (B)
+          - checked: false
+            title: Sektor12 (tm)
+          - checked: false
+            title: Lille Vesterbro (C)
+        title: Parken
 tags:
   - saga11
   - test
