@@ -12,9 +12,27 @@ Specfic page to control the layout for the frontpage
   <!-- /Users/mdk/Web/saga11/src/themes/grunn/layouts/page/frontpage.njk  -->
 {%- endif -%}
 
-<div class="pagewidth bg-red-400">
+<div class="pagewidth">
+  <div class="flex items-center justify-center h-48">
+    <img src="themes/{{ theme }}/assets/img/icon-jordan.png" alt="Jordan Larson" class=" animate-bounce w-32 h-32">
+  </div>
 
-  {{ content | safe }}
+  <div class="h-44 lg:w-[40rem] mx-auto bg-black/40 p-12 rounded-md shadow-md">
+    <span id="element" class="text-5xl line"></span>
+  </div>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <script>
+    var typed = new Typed('#element', {
+      strings: [
+        'Har PC Signet Med Jordan larson ? ...', 'Har PC Signet Med Jordan larson ? Nej ikke endnu 🤬'
+      ],
+      typeSpeed: 50,
+      smartBackspace: true
+    });
+  </script>
+
 </div>
 </article>
 

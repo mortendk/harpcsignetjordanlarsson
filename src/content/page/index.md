@@ -8,31 +8,31 @@ card:
   text: Har PC signet Med Jordan Larsson ?
 components:
   - type: form
-    title: Form Submitted
+    title: ""
     name: hva-skal-pc
     action: /submitted
     template: components/form/form.njk
     text: ""
     elements:
       - type: options
-        inputtype: Radio
+        inputtype: Dropdown
         required: false
         title: Hvornår skal PC signe med Jordan Larsson
         option:
           - checked: false
-            title: "Lige nu "
+            title: Lige nu !
           - checked: false
-            title: Hvorfor er det ikke gjort endnu
+            title: NU
           - checked: false
-            title: ASAP
+            title: På Mandag tak
       - type: textarea
-        title: "Hva mener du PC skal gøre lige nu "
+        title: "Mit sublime råd til PC er:"
         required: true
       - type: text
         inputtype: text
         required: true
-        title: Fodbold orakel
-        placeholder: Dit navn
+        title: Fra
+        placeholder: Fodbold oraklets
 tags:
   - saga11
   - test
@@ -43,6 +43,6 @@ eleventyNavigation:
   order: 1
   key: main
   excerpt: Har PC signet Med Jordan Larsson ?
-layout: page/under-construction.njk
+layout: page/frontpage.njk
 eleventyExcludeFromCollections: false
 ---

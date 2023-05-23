@@ -5,7 +5,7 @@
 
   <label
     for="form-item-{{ item.title | slugify }}"
-    class="font-bold text-lg hover:text-gray-800 hover:cursor-pointer">
+    class="font-bold text-lg py-4">
     {{ item.title }}
     {% if item.required %} * {% endif %}
   </label>
@@ -16,8 +16,8 @@
     id="form-item-{{ item.title | slugify }}"
     placeholder="{{ item.placeholder }} "
     {% if item.required %}required{% endif %}
-    class="rounded bg-gray-200 border-gray-300 text-gray-800
+    class="rounded-sm bg-white/80
            focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-cyan-500 focus:ring-white
-           focus:bg-gray-200"
+           focus:bg-white"
 />
 </div>

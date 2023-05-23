@@ -6,11 +6,8 @@ Global header for the site
   <!-- src/__includes/header.njk -->
 {%- endif  -%}
 
-<header class="relative flex items-center justify-center z-20 h-16 md:h-20" x-data="{ openmenu: false }">
+<header class="flex items-center justify-center" x-data="{ openmenu: false }">
 
-  <img src="themes/{{ theme }}/assets/img/under-construction.gif" alt="under construction" width="100">
-  <div class="text-5xl">
-  Jordan Larsson
-  </div>
+  {# <img src="themes/{{ theme }}/assets/img/icon-jordan.png" alt="Jordan Larson" class=" animate-bounce w-12 h-12"> #}
 </header>
 {% include "notification.njk" %}

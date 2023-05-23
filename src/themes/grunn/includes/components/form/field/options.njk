@@ -5,17 +5,17 @@
 
   <label
     for="form-item-{{ item.title | slugify }}"
-    class="font-bold text-lg hover:text-gray-800 hover:cursor-pointer">
+    class="font-bold text-lg">
     {{ item.title }}
     {% if item.required %} * {% endif %}
   </label>
 
   {# Dropdown #}
   {% if item.inputtype == "Dropdown" %}
-    <select name="select">
+    <select name="select" class="text-pink-800 font-bold">
 
       {% for option in item.option %}
-        <option label="{{ option.title | slugify }}" {% if option.checked %} selected {% endif %}>
+        <option value="{{ option.title | slugify }}" {% if option.checked %} selected {% endif %} ">
           {{ option.title }}
         </option>
       {% endfor %}
