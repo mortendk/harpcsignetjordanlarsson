@@ -38,16 +38,18 @@ components:
         required: false
         option:
           - checked: false
-            title: Neder Hipster
+            title: Frederiksberg (D Familie)
+          - checked: false
+            title: 101% Plastique
           - checked: false
             title: Østerbro (A)
           - checked: false
             title: Lille Nørrebro (B)
-          - checked: false
+          - checked: true
             title: Sektor12 (tm)
           - checked: false
             title: Lille Vesterbro (C)
-        title: Parken
+        title: Hvor i Parken ?
 tags:
   - saga11
   - test
