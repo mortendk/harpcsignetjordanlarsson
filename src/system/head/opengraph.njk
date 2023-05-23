@@ -40,6 +40,10 @@ Global header for the site
   {%- endif -%}
 {%- endset -%}
 
+<meta itemprop="name" content="{{ site.title }}"/>
+<meta itemprop="description" content="{{ ogdescription }}"/>
+<meta itemprop="image" content="{{ ogimage }}"/>
+
 {# Facebook #}
 <meta property="og:site_name" content="{{site.title}}">
 <meta property="og:title" content="{{ ogtitle }}">
@@ -54,8 +58,12 @@ Global header for the site
 {# <meta name="twitter:card" content="summary" /> #}
 <meta name="twitter:card" content="summary_large_image">
 {% if some.twitter %}
-  <meta name="twitter:author" content="@{{some.twitter}}">
+  <meta name="twitter:creator" content="@{{some.twitter}}">
+  <meta name="twitter:site" content="@{{so}}"/>
 {% endif %}
 <meta name="twitter:title" content="{{ ogtitle }}">
 <meta name="twitter:description" content="{{ ogdescription }}">
 <meta name="twitter:image" content="{{ twitterimage }}">
+
+<meta name="og:image" content="{{ ogimage }}"/>
+<meta name="og:image:secure_url" content="{{ ogimage}}"/>
