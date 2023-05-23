@@ -1,6 +1,6 @@
 ---
 layout: default.njk
-saga-template-name: Frontpage
+saga-template-name: page Modtaget
 ---
 {#
 ------------------------------------------------
@@ -13,11 +13,12 @@ Specfic page to control the layout for the frontpage
 {%- endif -%}
 
 <div class="pagewidth">
-  <div class="flex items-center justify-center h-48">
-    <img src="themes/{{ theme }}/assets/img/icon-jordan.png" alt="Jordan Larson" class=" animate-bounce w-32 h-32">
+
+  <div class="flex items-center justify-center h-96">
+    <a href="/"><img src="/themes/{{ theme }}/assets/img/icon-jordan.png" alt="Jordan Larson" class=" animate-pulse w-44 h-44"></a>
   </div>
 
-  <div class="lg:h-44 lg:w-[40rem] mx-auto bg-black/40 p-12 rounded-md shadow-md text-white">
+  <div class="h-44 lg:w-[40rem] mx-auto bg-black/40 p-12 rounded-md shadow-md text-white">
     <span id="element" class="text-5xl line"></span>
   </div>
 
@@ -25,9 +26,7 @@ Specfic page to control the layout for the frontpage
 
   <script>
     var typed = new Typed('#element', {
-      strings: [
-        'Har PC Signet Med Jordan larson ? ...', 'Har PC Signet Med Jordan larson ? Nej ikke endnu 🤬'
-      ],
+      strings: ['Modtaget Sendes til PC'],
       typeSpeed: 50,
       smartBackspace: true
     });

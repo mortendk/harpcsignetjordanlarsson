@@ -1,10 +1,10 @@
 ---
 title: "Det er modtaget "
 image: ""
-url: submitted
+url: sendes-til-pc
 eleventyNavigation:
   excerpt: ""
-layout: page/page.njk
+layout: page/modtaget.njk
 eleventyExcludeFromCollections: false
 ---
 Der samles til bunke 

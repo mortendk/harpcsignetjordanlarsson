@@ -10,7 +10,7 @@ components:
   - type: form
     title: ""
     name: hva-skal-pc
-    action: /submitted
+    action: /sendes-til-pc
     template: components/form/form.njk
     text: ""
     elements:
@@ -32,7 +32,7 @@ components:
         inputtype: text
         required: true
         title: Fra
-        placeholder: Fodbold oraklets
+        placeholder: Fodbold oraklet på Nedre C
 tags:
   - saga11
   - test
