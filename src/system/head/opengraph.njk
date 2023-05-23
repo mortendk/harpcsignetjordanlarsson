@@ -2,39 +2,41 @@
 ------------------------------------------------
 Global header for the site
 #}
-{%- if env.mode != 'prod' %}<!-- __includes/head/opengraph.njk  -->{%- endif  -%}
+{%- if env.mode != 'prod' %}
+  <!-- __includes/head/opengraph.njk  -->
+{%- endif  -%}
 
 {% set ogurl = env.url + page.url %}
 
 {%- set ogtitle -%}
-  {%- if card.title %}
-   {{- card.title -}}
-  {% else %}
-    {{- site.title -}}
-  {% endif %}
+{%- if card.title %}
+  {{- card.title -}}
+{% else %}
+  {{- site.title -}}
+{% endif %}
 {%- endset %}
 
 {%- set ogdescription -%}
-  {%- if card.text -%}
-   {{- card.text -}}
-  {% else  %}
-    {{- site.description -}}
-  {% endif %}
+{%- if card.text -%}
+  {{- card.text -}}
+{% else  %}
+  {{- site.description -}}
+{% endif %}
 {%- endset %}
 
 {%- set ogimage -%}
-  {%- if card.image -%}
-   {{ env.url }}/themes/{{ theme }}{%- imageurl img=card.image, size=[1200] -%}
-  {%- else -%}
-   {{ env.url }}/themes/{{ theme }}/assets/opengraph/facebook.jpg
+{%- if card.image -%}
+  {{ env.url }}/themes/{{ theme }}{%- imageurl img=card.image, size=[1200] -%}
+{%- else -%}
+  {{ env.url }}/themes/{{ theme }}/assets/opengraph/facebook.jpg
   {%- endif -%}
 {%- endset -%}
 
 {%- set twitterimage -%}
-  {%- if card.image -%}
-   {{ env.url }}/themes/{{ theme }}{%- imageurl img=card.image, size=[1024] -%}
-  {%- else -%}
-   {{ env.url }}/themes/{{ theme }}/assets/opengraph/facebook.jpg
+{%- if card.image -%}
+  {{ env.url }}/themes/{{ theme }}{%- imageurl img=card.image, size=[1024] -%}
+{%- else -%}
+  {{ env.url }}/themes/{{ theme }}/assets/opengraph/facebook.jpg
   {%- endif -%}
 {%- endset -%}
 
@@ -50,9 +52,9 @@ Global header for the site
 {# Twitter #}
 
 {# <meta name="twitter:card" content="summary" /> #}
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 {% if some.twitter %}
-<meta name="twitter:author" content="@{{some.twitter}}">
+  <meta name="twitter:author" content="@{{some.twitter}}">
 {% endif %}
 <meta name="twitter:title" content="{{ ogtitle }}">
 <meta name="twitter:description" content="{{ ogdescription }}">
