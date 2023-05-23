@@ -15,7 +15,7 @@
     <select name="select" class="text-pink-800 font-bold">
 
       {% for option in item.option %}
-        <option value="{{ option.title | slugify }}" {% if option.checked %} selected {% endif %} ">
+        <option value="{{ option.title | slugify }}" {% if option.checked %} selected {% endif %}>
           {{ option.title }}
         </option>
       {% endfor %}
