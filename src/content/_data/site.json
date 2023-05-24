@@ -6,7 +6,7 @@
   "faviconcolor": "#001e96",
   "authoremail": "Ragnar@valhalla",
   "mastodon_verification": "",
-  "rss": true,
+  "rss": false,
   "authorname": "PC",
   "country": "denmark",
   "errorpage": "404 !",
