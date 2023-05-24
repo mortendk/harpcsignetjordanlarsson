@@ -1,5 +1,5 @@
 ---
-title: Hva skal PC gøre
+title: Gode råd fra hele københavn
 components:
   - type: testamonials
     template: components/testamonial/testamonial.njk
@@ -10,7 +10,8 @@ components:
         person: Ham det er spion hos Mister
         persontitle: Frederiksberg - Familie tribunen
         title: køb! Betal prisen, ingen grund til at forhandle.
-      - title: Det skal helst være Parken med 35.000, og vi står i lort til halsen. Eller et derby på Brøndby Stadion, eller en pokalsemifinale
+      - title: Det skal helst være Parken med 35.000, og vi står i lort til halsen.
+          Eller et derby på Brøndby Stadion, eller en pokalsemifinale
         person: Nees
         persontitle: El hefe
       - title: Kære PC ... køb! Betal prisen, ingen grund til at forhandle.
@@ -52,11 +53,11 @@ components:
       - title: Kære PC ... køb! Betal prisen, ingen grund til at forhandle.
         person: Ham det er spion hos Mister
         persontitle: Frederiksberg - Familie tribunen
-url: pc-det-du-skal-gøre-er
+url: fra-tribunerne
 eleventyNavigation:
   excerpt: ""
   parent: main
-  title: Gode Råd
+  title: Tribunerne taler
 layout: page/page.njk
 eleventyExcludeFromCollections: false
 ---
