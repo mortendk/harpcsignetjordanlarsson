@@ -6,11 +6,11 @@
 
   {# title + text #}
   <article class="mx-auto max-w-3xl py-4">
-    <h3 class="text-5xl text-cyan-700 dark:text-cyan-200 py-4 text-center">
+    <h3 class="text-5xl text-white py-4 text-center">
       {{ component.title }}
     </h3>
     {% if component.text %}
-      <div class="prose prose-xl dark:prose-invert">
+      <div class="prose prose-xl ">
         {{ component.text  | markdown | safe  }}
       </div>
     {% endif %}
@@ -36,12 +36,12 @@
         {# / person #}
 
         {# quote #}
-        <h3 class="text-xl text-cyan-700 dark:text-cyan-200">
+        <h3 class="text-xl text-white">
           {{ item.title }}
         </h3>
 
         {% if item.text %}
-          <div class="text  dark:text-cyan-200">
+          <div class="text ">
             {{ item.text  | markdown | safe  }}
           </div>
         {% endif %}

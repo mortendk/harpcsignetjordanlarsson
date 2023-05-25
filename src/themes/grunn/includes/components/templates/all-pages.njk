@@ -2,7 +2,7 @@
   <!-- src/themes/grunn/includes/components/templates/all-pages.njk -->
 {%- endif -%}
 
-<h2 class="text-5xl text-center text-cyan-700 dark:text-cyan-200">All pages</h2>
+<h2 class="text-5xl text-center text-white">All pages</h2>
 
 <section class="grid md:grid-cols-3 gap-4 py-4">
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="p-4">
-          <div class="text-2xl text-cyan-800 dark:text-cyan-200">{{item.data.card.title }}</div>
+          <div class="text-2xl text-cyan-800">{{item.data.card.title }}</div>
           <div class="mt-2">{{ item.data.card.text }}</div>
           <time class="font-bold text-gray-600 dark:text-gray-200 text-right py-4 block">{{ item.date | formatDate("DDD  T", "DK") }}</time>
         </div>

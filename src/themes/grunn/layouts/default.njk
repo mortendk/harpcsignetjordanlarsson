@@ -20,12 +20,12 @@ Calls the _base/base.njk that is holding all the basic html
 
   {%- include "header.njk" %}
 
-  <main id="main" tabindex="-1" class="pagewidth flex-grow focus-visible:outline-0">
+  <main id="main" tabindex="-1" class="flex-grow focus-visible:outline-0">
 
     {{ content | safe }}
 
   </main>
 
-  {# {%- include "edit.njk" %} #}
+  {%- include "edit.njk" %}
 
   {%- include "footer.njk" %}

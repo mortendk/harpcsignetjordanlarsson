@@ -6,12 +6,23 @@ saga-template-name: Frontpage
   <!-- /Users/mdk/Web/saga11/src/themes/grunn/layouts/page/frontpage.njk  -->
 {%- endif -%}
 
-<div class="pagewidth">
-  <div class="flex items-center justify-center h-48">
-    <img src="/themes/{{ theme }}/assets/img/jordan.png" alt="Jordan Larson" class=" animate-bounce w-32 h-32">
-  </div>
+<h1 class="sr-only">{{ title }}</h1>
 
-  <div class="h-96 lg:h-52 lg:w-[40rem] mx-auto bg-black/40 p-12 rounded-md shadow-md text-white">
+<div class="">
+
+  {% if image %}
+    <div class="aspect-video overflow-hidden w-full">
+      {% picture
+      img=image,
+      width=[640,1024, 1563],
+      sizes="(max-width: 640px) 50vw, 100vw",
+      css="w-full",
+      loading = "eager"
+  %}
+    </div>
+  {% endif %}
+
+  <div class="h-96 lg:h-56 lg:w-[40rem] mx-auto bg-black/40 p-12 rounded-md shadow-md text-white ">
     <span id="element" class="text-5xl line"></span>
   </div>
 
@@ -20,7 +31,7 @@ saga-template-name: Frontpage
   <script>
     var typed = new Typed('#element', {
       strings: [
-        'Har PC signet', 'Har the PC', 'Har the PC signet med Jordan Larsson ? Nej ikke endnu 🤬'
+        'Har PC signet', 'Har the PC signet med Jordan Larsson ? ... <br>Nej ikke endnu 🤬'
       ],
       typeSpeed: 50,
       smartBackspace: true
@@ -29,4 +40,35 @@ saga-template-name: Frontpage
 
 </div>
 
-{% include "components/all.njk" %}
+{# List all the Quotes we like #}
+{% for item in collections.quotes %}
+  {% if (loop.index <= 3) %}
+    {# Quote card #}
+    <article class="p-4 bg-white m-4">
+      <a href="{{ item.url }}" class="flex flex-row">
+        <div class="flex-none">
+          {% if image %}
+            <div class="aspect-square overflow-hidden w-16 h-16 rounded-full ">
+              {% picture
+              img = item.data.image,
+              width = [300],
+              sizes = "",
+              css = "w-16",
+              loading = "eager"
+ %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="pl-4">
+          {# <h2 class="text-base text-fuc text-fuchsia-900">{{item.data.title}}</h2> #}
+          <div class="h-32 overflow-clip">{{item.templateContent | safe}}</div>
+          <div class="text-sm">{{ item.data.tribune}}</div>
+          <div class="text-sm">{{ item.data.name }}</div>
+        </div>
+      </a>
+    </article>
+  {% endif %}
+{% endfor %}
+<div class="pagewidth">
+  {% include "components/all.njk" %}
+</div>

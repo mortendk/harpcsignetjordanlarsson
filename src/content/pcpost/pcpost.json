@@ -1,0 +1,4 @@
+{
+  "permalink": "the-pc-post/{{ title | slugify }}/",
+  "layout": "post/pc-post.njk"
+}
