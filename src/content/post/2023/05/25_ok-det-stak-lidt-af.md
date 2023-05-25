@@ -4,6 +4,7 @@ image: /upload/IMG_5950.jpeg
 card:
   image: /upload/IMG_5950.jpeg
   title: Jalla Jalla !
+  text: Lige en hurtig update herfra det her lille project
 tags:
   - rssfeed
   - news

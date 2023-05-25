@@ -4,9 +4,12 @@
 
 {# title + text #}
 <article class="mx-auto max-w-3xl">
-  <h2 class="text-5xl text-white py-4 text-center">
-    {{ component.title }}
-  </h2>
+  {% if component.title %}
+    <h2 class="text-5xl text-white py-4 text-center">
+      {{ component.title }}
+    </h2>
+  {% endif %}
+
   {% if component.text %}
     <div class="text-xl">
       {{ component.text  | markdown | safe  }}
