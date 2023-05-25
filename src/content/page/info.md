@@ -1,11 +1,11 @@
 ---
-title: Jordan Larsson Appreciation Society
+title: Info
 components:
   - type: collection
     title: ""
     template: components/collection/collection.njk
     collection: news
-url: appreciation-society
+url: info
 eleventyNavigation:
   excerpt: ""
   parent: main

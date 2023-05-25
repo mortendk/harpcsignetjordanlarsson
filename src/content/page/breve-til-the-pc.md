@@ -1,6 +1,10 @@
 ---
 title: Kære (the) PC !
 components:
+  - type: collection
+    title: ""
+    template: components/collection/collection-quotes.njk
+    collection: quotes
   - type: njktemplate
     template: components/templates/all-Pcpost.njk
 url: pc-post

@@ -8,7 +8,7 @@ saga-template-name: Post Default
   <!-- ___layouts/post/post.njk  -->
 {%- endif -%}
 
-<h1 class="pb-4 text-5xl text-white pt-12 pagewidth">{{ title }}</h1>
+<h1 class="pb-4 text-5xl pt-12 pagewidth">{{ title }}</h1>
 
 {% if image %}
   <div class="aspect-video overflow-hidden shadow-lg p-4 rotate-2">
@@ -16,12 +16,12 @@ saga-template-name: Post Default
   </div>
 {% endif %}
 
-<article class="pagewidth mb-8 bg-white/90 p-4">
-  <time class="text-sm">{{ date | formatDate("DDD  T", "DK") }}</time>
+<article class="pagewidth mb-8 p-4">
 
-  <div class="prose text-black max-w-full">
+  <div class="prose-lg text-black max-w-full pb-4">
     {{ content | safe }}
   </div>
+  <time class="text-sm">{{ date | formatDate("DDD  T", "DK") }}</time>
 
 </article>
 

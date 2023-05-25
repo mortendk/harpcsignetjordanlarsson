@@ -9,7 +9,7 @@ A simple pre / next nav for collections
 
 {%- if collections.allPcPost %}
 
-  <nav class="flex flex-row justify-between w-full" aria-label="Pre and Next post">
+  <nav class="flex flex-row justify-between w-full p-4" aria-label="Pre and Next post">
     {#  #}
     {%- set nextPost = collections.allPcPost | getNextCollectionItem(page) %}
     {%- set previousPost = collections.allPcPost | getPreviousCollectionItem(page) %}
@@ -18,7 +18,7 @@ A simple pre / next nav for collections
       {# previous  link #}
       {%- if previousPost %}
         <a href="{{ previousPost.url | url }}" title="{{ previousPost.data.title }}" class="flex flex-row items-center w-full">
-          <div class="w-8 text-black dark:text-white ">{% include "icons/arrow-left.svg" %}</div>
+          <div class="w-4  mr-2  text-black dark:text-white ">{% include "icons/arrow-left.svg" %}</div>
           <div>{{ previousPost.data.title }}</div>
         </a>
       {% endif %}
@@ -26,7 +26,7 @@ A simple pre / next nav for collections
       {%- if nextPost %}
         <a href="{{ nextPost.url | url }}" title="{{ nextPost.data.title }}" class="flex flex-row items-center justify-end w-full">
           <div>{{ nextPost.data.title }}</div>
-          <div class="w-8 text-black dark:text-white ">{% include "icons/arrow-right.svg" %}</div>
+          <div class="w-4 ml-2 text-black dark:text-white ">{% include "icons/arrow-right.svg" %}</div>
         </a>
       {% endif %}
       {# /if pre of next #}

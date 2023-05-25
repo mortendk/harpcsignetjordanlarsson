@@ -12,14 +12,10 @@ date: 2023-05-25 15:43:36
 layout: post/post.njk
 eleventyExcludeFromCollections: false
 ---
-D﻿en har fået rigeligt med gas siden mandag aften:\
-\
-D﻿omain registreret \
-\
-Lyn website oppe aka en form\
-\
-T﻿ipsbladet\
-\
-5﻿000 unikke besøgende\
-\
-4﻿00+ beskeder i et stort ønske om at Jordan Larsson og FC København får lavet en aftale
+Vi har siden sen eftermiddag den 23 Maj haft 5000 unikke besøgende igennem tælle apperatet og har modtaget over 400 beskeder om et  ønske om Jordan Larsson og FC København får lavet en aftale.
+
+Vores data analytikere er igang med at crunche tallene så det ægte(tm) tal for ønsket om at svensk fodbold adel i københavn kan se dagens lys.
+
+Vi er meget begejstret for at hele københavn og alle 4 tribuner, samt alle ægte plastique støtter op om Nordens Største smukkeste og bedste fodbold hold.
+
+Vi har valgt at vise nogen af de smukke tilkendegivelser fra lægterne som i kan [læse over i PCs postkasse](/pc-post)
