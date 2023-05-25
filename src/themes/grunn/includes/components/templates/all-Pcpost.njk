@@ -6,14 +6,14 @@
 
   {% for item in collections.allPcPost %}
 
-    <article class="p-4 bg-white m-4">
-      <a href="{{ item.url }}" class="flex flex-row">
+    <article class="bg-white mx-2 shadow-md hover:bg-sky-200">
+      <a href="{{ item.url }}" class="flex flex-row p-4 ">
         <div class="flex-none">
           {% if item.data.image %}
-            <div class="aspect-square overflow-hidden w-16 h-16 rounded-full ">
+            <div class="aspect-square overflow-hidden w-8 h-8 rounded-full ">
               {% picture
               img = item.data.image,
-              width = [300],
+              width = [32],
               sizes = "",
               css = "w-16",
               loading = "eager"
@@ -22,10 +22,8 @@
           {% endif %}
         </div>
         <div class="pl-4">
-          {# <h2 class="text-base text-fuc text-fuchsia-900">{{item.data.title}}</h2> #}
-          <div class="h-32 overflow-clip">{{item.templateContent | safe}}</div>
-          <div class="text-sm">{{ item.data.tribune}}</div>
-          <div class="text-sm">{{ item.data.name }}</div>
+          <div class="h-12 overflow-clip">{{item.templateContent | safe}}</div>
+          <div class="text-sm text-right italic">{{ item.data.name }} ({{ item.data.tribune}})</div>
         </div>
       </a>
     </article>

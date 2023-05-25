@@ -1,5 +1,5 @@
 ---
-title: når mandelmælks latte er blevet kold
+title: Lige efter min Latte Med havre mælk er blevet kølig
 image: /upload/barista-life-coffee.gif
 tags:
   - barometer

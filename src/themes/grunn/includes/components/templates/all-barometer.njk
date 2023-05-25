@@ -2,7 +2,8 @@
   <!-- src/themes/grunn/includes/components/templates/all-post.njk -->
 {%- endif -%}
 
-<h3 class="text-3xl text-white">Hvornår skal PC signe Jordan ?</h3>
+<h3 class="text-2xl">Folket har talt Her er tidspunktet hvornår PC skal lave kontrakt med Jordan Larsson</h3>
+<div class="text-sm">MegaÆgte (tm) tal verificeret af VAR vognen af 25 maj 22:07</div>
 <section class="grid md:grid-cols-3 gap-4 py-4">
 
   {% for item in collections.barometer %}
@@ -11,7 +12,7 @@
 
       <div class="flex-none">
         {% if item.data.image %}
-          <div class="aspect-video w-full">
+          <div class="shadow-lg aspect-video overflow-hidden">
             {% picture
             img = item.data.image,
             width = [800],
@@ -22,7 +23,7 @@
           </div>
         {% endif %}
       </div>
-      <div class="pl-4 text-white flex flex-col items-center">
+      <div class="pl-4 flex flex-col items-center">
         {# <h2 class="text-base text-fuc text-fuchsia-900">{{item.data.title}}</h2> #}
 
         <div class="text-7xl font-bold  drop-shadow-lg py-5">{{item.templateContent | safe}}</div>

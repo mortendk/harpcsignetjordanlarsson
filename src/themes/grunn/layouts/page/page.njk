@@ -10,7 +10,7 @@ This is the default template for the page type
   <!-- ___layouts/page/page.njk  -->
 {%- endif -%}
 
-<h1 class="text-white text-4xl lg:text-8xl pt-12 pagewidth font-bold">{{ title }}</h1>
+<h1 class="text-center text-5xl lg:text-8xl pt-12 pb-4 pagewidth drop-shadow-sm">{{ title }}</h1>
 
 {% if image %}
   <div class="aspect-video overflow-hidden">
@@ -25,7 +25,7 @@ This is the default template for the page type
 {% endif %}
 
 {% if content %}
-  <div class="prose-xl text-white pagewidth">
+  <div class="prose-lg  max max-w-prose  pagewidth">
     {{ content | markdown | safe }}
   </div>
 {% endif %}
