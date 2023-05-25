@@ -8,7 +8,7 @@
   {{ component.text  | markdown | safe  }}
 {% endif %}
 
-<form name="{{ component.name | urlencode }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ component.action }}"
+<form id="pcform" name="{{ component.name | urlencode }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ component.action }}"
 class="lg:w-[40rem] mx-auto">
   {# <div data-netlify-recaptcha="true"></div> #}
   <div hidden>
@@ -30,7 +30,7 @@ class="lg:w-[40rem] mx-auto">
   {% endfor %}
 
   <button aria-label="Submit"
-  class="hover:bg-fuchsia-700 text-white font-bold text-2xl bg-fuchsia-900 py-2 px-4 rounded my-4"
+  class="hover:bg-fuchsia-700 text-white  font-bold text-2xl bg-fuchsia-900 py-2 px-4 rounded my-4"
   >🚂 Send med Express Fart 🔥</button>
 </div>
 

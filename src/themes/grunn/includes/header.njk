@@ -1,13 +1,44 @@
-{# HEADER
-------------------------------------------------
-Global header for the site
- #}
 {%- if env.mode != 'prod' %}
   <!-- src/__includes/header.njk -->
 {%- endif  -%}
 
-<header class="flex items-center justify-center" x-data="{ openmenu: false }">
+<header class="relative w-full z-20 h-16 md:h-20" x-data="{ openmenu: false }">
 
-  {# <img src="themes/{{ theme }}/assets/img/icon-jordan.png" alt="Jordan Larson" class=" animate-bounce w-12 h-12"> #}
-</header>
-{% include "notification.njk" %}
+  {# skip link #}
+  <a href="#main" class="sr-only focus:not-sr-only sr-tab">Skip to Content</a>
+
+  {# main wrap header elements #}
+  <div class="flex flex-row h-16 justify-start items-center bg-sky-600 border-b border-sky-400 shadow px-2 lg:px-28">
+
+    {# quick n fast logo #}
+    <a href="/" title="{{site.title}}" class="mt-14 w-16 h-16 overflow-hidden inline-flex items-center md:mr-4 hover:rotate-45 transition">
+      <img src="/themes/{{ theme }}/assets/img/menu-home.png" alt="Jordan Larson" width="64" height="64" class="shadow-lg rounded-full">
+      <h1 class="sr-only">{{site.title}}</h1>
+    </a>
+
+    <div class="flex flex-row justify-between w-full items-center px-4 pt-2">
+      {%- for item in collections.all | eleventyNavigation("main") %}
+        {# test if theres children to the first level of menu items #}
+        <a href="{{ item.url }}"
+      {% if item.url in page.url %}
+          aria-current="page" class="text-white justify-center items-center font-bold flex flex-row underline"
+        {% else  %}
+          class="flex flex-row text-white justify-center  items-center font-bold "
+        {% endif %}
+        {# if target #}
+        {% if item.target %}
+          target="_blank" rel="noopener"
+        {% endif %}
+      >
+          {% if item.icon %}
+            <div class="w-8 hover:text-purple-800 {% if item.url in page.url %}text-slate-800 {% else %}text-white {% endif %}">
+              {% include item.icon %}
+            </div>
+          {% endif %}
+          <div class="hidden lg:block pl-4">{{ item.title }}</div>
+        </a>
+      {% endfor %}
+    </div>
+
+  </header>
+  {% include "notification.njk" %}

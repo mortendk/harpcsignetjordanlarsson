@@ -5,7 +5,7 @@ slider yo
 <section>
 
   {% if component.title %}
-    <h1 class="text-5xl text-cyan-700 dark:text-cyan-200 text-center py-4 ">
+    <h1 class="text-5xl text-white text-center py-4 ">
       {{ component.title }}
     </h1>
   {% endif %}
@@ -34,7 +34,7 @@ slider yo
       <button
           type="button" aria-label="open image"
           class="hidden md:block w-6 h-6 z-10 absolute right-2 top-2"
-          :class="isSliderOpen ? 'text-white dark:text-cyan-200' : 'text-white'"
+          :class="isSliderOpen ? 'text-white ' : 'text-white '"
           @click="isSliderOpen = !isSliderOpen, isModalOpen = !isModalOpen">
         <span x-show="isSliderOpen">
           {% include "icons/x-mark.svg" %}
@@ -68,7 +68,7 @@ slider yo
 
             {# title and text #}
             {% if item.title or item.text %}
-              <div class="hidden absolute bottom-4 w-full bg-black/70 text-white text-center p-2">
+              <div class="hidden absolute bottom-4 w-full bg-black/70 text-white  text-center p-2">
                 <div @click="isSliderOpen = !isSliderOpen, isModalOpen = !isModalOpen">{{ item.title }}</div>
               </div>
             {% endif %}

@@ -1,0 +1,46 @@
+---
+layout: default.njk
+saga-template-name: PC POST
+---
+
+{# POST ------------------------------------------------ post template #}
+{%- if env.mode != 'prod' %}
+  <!-- ___layouts/post/post.njk  -->
+{%- endif -%}
+
+<article class="pagewidth pt-8">
+
+  <h1 class="pb-4 text-3xl text-center">Kære the PC...</h1>
+
+  <article class="p-4 bg-white rounded-md lg:w-1/2 mx-auto">
+
+    <div class="prose prose-lg pb-4 max-w-full">
+      {{ content | safe }}
+    </div>
+    <div class="text font-bold">Hvornår ? {{ tid }}</div>
+    {# card #}
+    <div class="flex flex-row py-4 items-center">
+      {% if image %}
+        <div class="aspect-square overflow-hidden w-16 h-16 rounded-full ">
+          {% picture
+          img = image,
+          width = [300],
+          sizes = "",
+          css = "w-16",
+          loading = "eager"
+ %}
+        </div>
+      {% endif %}
+      <div class="pl-4">
+
+        <div class="text-sm">{{ name }}</div>
+        <div class="text-sm">{{ tribune}}</div>
+        <time class="text-sm">{{ date | formatDate("DDD  T", "DK") }}</time>
+      </div>
+    </article>
+
+    {# Pre next nav #}
+    {% include "nav/pcpost-pre-next.njk" %}
+
+    {% include "share.njk" %}</div>
+</article>

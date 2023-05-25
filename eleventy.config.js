@@ -104,6 +104,7 @@ module.exports = function (eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("allPosts", require("./src/system/11ty/collection/allPosts.js"));
+  eleventyConfig.addCollection("allPcPost", require("./src/system/11ty/collection/allPcPosts.js"));
   eleventyConfig.addCollection("allPages", require("./src/system/11ty/collection/allPages.js"));
   eleventyConfig.addCollection("allNotification", require("./src/system/11ty/collection/allNotification.js"));
   eleventyConfig.addCollection("allTags", require("./src/system/11ty/collection/allTags.js"));

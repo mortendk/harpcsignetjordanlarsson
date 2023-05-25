@@ -10,9 +10,7 @@ This is the default template for the page type
   <!-- ___layouts/page/page.njk  -->
 {%- endif -%}
 
-{% include "nav/breadcrumb.njk" %}
-
-<h1 class="text-cyan-700 dark:text-cyan-200 text-5xl lg:text-8xl mb-8 text-center">{{ title }}</h1>
+<h1 class="text-center text-5xl lg:text-8xl pt-12 pb-4 pagewidth drop-shadow-sm">{{ title }}</h1>
 
 {% if image %}
   <div class="aspect-video overflow-hidden">
@@ -24,14 +22,16 @@ This is the default template for the page type
       loading = "eager"
   %}
   </div>
-
 {% endif %}
 
-{% include "share.njk" %}
+{% if content %}
+  <div class="prose-lg  max max-w-prose  pagewidth">
+    {{ content | markdown | safe }}
+  </div>
+{% endif %}
 
-{# List all page compoenents #}
-{% include "components/all.njk" %}
-
-<div class="prose dark:prose-invert">
-  {{ content | markdown | safe }}
+<div class="pagewidth">
+  {% include "components/all.njk" %}
 </div>
+
+{% include "share.njk" %}

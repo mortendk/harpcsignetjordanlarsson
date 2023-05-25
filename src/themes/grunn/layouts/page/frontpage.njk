@@ -6,27 +6,79 @@ saga-template-name: Frontpage
   <!-- /Users/mdk/Web/saga11/src/themes/grunn/layouts/page/frontpage.njk  -->
 {%- endif -%}
 
-<div class="pagewidth">
-  <div class="flex items-center justify-center h-48">
-    <img src="/themes/{{ theme }}/assets/img/jordan.png" alt="Jordan Larson" class=" animate-bounce w-32 h-32">
+<h1 class="sr-only">{{ title }}</h1>
+
+<div class="relative z-0">
+  <div class="absolute z-10 top-8 lg:top-32 lg:left-32 left-4 text-pink-700 font-semibold text-4xl lg:text-9xl w-10/12 mx-auto drop-shadow-md">
+    <span id="element"></span>
   </div>
-
-  <div class="h-96 lg:h-52 lg:w-[40rem] mx-auto bg-black/40 p-12 rounded-md shadow-md text-white">
-    <span id="element" class="text-5xl line"></span>
-  </div>
-
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-  <script>
-    var typed = new Typed('#element', {
-      strings: [
-        'Har PC signet', 'Har the PC', 'Har the PC signet med Jordan Larsson ? Nej ikke endnu 🤬'
-      ],
-      typeSpeed: 50,
-      smartBackspace: true
-    });
-  </script>
+  {# <div class="absolute bottom-2 right-8 z-10">
+    <a href="#pcform" class=" bg-pink-600 hover:bg-pink-400 rounded-md px-8 py-4 font-bold text-white">
+    Skriv til PC
+    </a>
+  </div> #}
+  <div class="w-3/4 h-full bg-white/50 absolute animate-pulse"></div>
+  {% if image %}
+    <div class="aspect-video overflow-hidden">
+      {% picture
+      img=image,
+      width=[640,1024, 1563],
+      sizes="(max-width: 640px) 50vw, 100vw",
+      css="w-full",
+      loading = "eager"
+  %}
+    </div>
+  {% endif %}
 
 </div>
 
-{% include "components/all.njk" %}
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+<script>
+  var typed = new Typed('#element', {
+    strings: [
+      'Har PC signet', 'Har the PC signet med Jordan Larsson ? ... <br>Nej ikke endnu!'
+    ],
+    typeSpeed: 50,
+    smartBackspace: true
+  });
+</script>
+
+<div class="pagewidth">
+  {% include "components/all.njk" %}
+</div>
+
+<h3 class="text-3xl pagewidth text-center">Hørt på tribunerne</h2>
+<section class="grid grid-cols-3 gap-4 pagewidth">
+  {# List all the Quotes we like #}
+  {% for item in collections.quotes %}
+    {% if (loop.index <= 3) %}
+      {# Quote card #}
+      <article class="p-4 bg-slate-50 m-4 shadow-lg border border-pink-100">
+        <a href="{{ item.url }}" class="flex flex-row">
+          <div class="flex-none">
+            {% if image %}
+              <div class="aspect-square overflow-hidden w-16 h-16 rounded-full ">
+                {% picture
+                img = item.data.image,
+                width = [300],
+                sizes = "",
+                css = "w-16",
+                loading = "eager"
+ %}
+              </div>
+            {% endif %}
+          </div>
+          <div class="pl-4">
+            {# <h2 class="text-base text-fuc text-fuchsia-900">{{item.data.title}}</h2> #}
+            <div class="h-30 mb-4 overflow-clip text-pink-700">
+              <i>Kære PC!</i>
+              {{ item.templateContent | safe | truncate(200, true, "?") }} ...</div>
+            <div class="text-sm">{{ item.data.tribune}}</div>
+            <div class="text-sm">{{ item.data.name }}</div>
+          </div>
+        </a>
+      </article>
+    {% endif %}
+  {% endfor %}
+</section>

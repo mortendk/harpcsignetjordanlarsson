@@ -21,21 +21,20 @@
 
         {% if item.data.showlink %}
           <a href="{{ item.url }}">
-        {% endif %}
+          {% endif %}
 
-        <h2 class="text-xl font-bold pr-4">
-          {{ item.data.title }}
-        </h2>
-        <div>
-          {{ item.data.text | markdown | safe  }}
-        </div>
+          <h2 class="text-xl font-bold pr-4">
+            {{ item.data.title }}
+          </h2>
+          <div>
+            {{ item.data.text | markdown | safe  }}
+          </div>
 
-        {% if item.data.showlink %}
+          {% if item.data.showlink %}
           </a>
         {% endif %}
 
       </div>
-
 
       {# <button
         aria-label="Close notification"

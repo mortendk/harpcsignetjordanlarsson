@@ -1,0 +1,54 @@
+{%- if env.mode != 'prod' %}
+  <!-- src/themes/grunn/includes/components/collection/collection.njk -->
+{%- endif -%}
+
+{# title + text #}
+<article class="mx-auto max-w-3xl bg-red-500">
+  {% if component.title %}
+    <h2 class="text-5xl py-4 text-center">
+      {{ component.title }}
+    </h2>
+  {% endif %}
+
+  {% if component.text %}
+    <div class="text-xl">
+      {{ component.text  | markdown | safe  }}
+    </div>
+  {% endif %}
+</article>
+
+<section class="grid md:grid-cols-3 gap-4 my-4" aria-label="Collection">
+
+  {% for item in collections[component.collection] %}
+
+    <article class="bg-white mx-2 shadow-md hover:bg-sky-200">
+      <a href="{{ item.url }}" class="flex flex-row p-4 ">
+        <div class="flex-none">
+          {% if item.data.image %}
+            <div class="aspect-square overflow-hidden w-8 h-8 rounded-full ">
+              {% picture
+              img = item.data.image,
+              width = [32],
+              sizes = "",
+              css = "w-16",
+              loading = "eager"
+ %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="pl-4">
+
+          {# <h2 class="text-base text-fuc text-fuchsia-900">{{item.data.title}}</h2> #}
+          <div class="h-30 mb-4 overflow-clip text-pink-700">
+            <i>Kære PC!</i>
+            {{ item.templateContent | safe | truncate(200, true, "?") }} ...</div>
+          <div class="text-sm">{{ item.data.tribune}}</div>
+          <div class="text-sm">{{ item.data.name }}</div>
+
+        </div>
+      </a>
+    </article>
+
+  {% endfor %}
+
+</section>

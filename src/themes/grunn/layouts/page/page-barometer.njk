@@ -1,0 +1,35 @@
+---
+layout: default.njk
+saga-template-name: Page default
+---
+{# PAGE DEFAULT TEAMPLATE
+------------------------------------------------
+This is the default template for the page type
+#}
+{%- if env.mode != 'prod' %}
+  <!-- ___layouts/page/page.njk  -->
+{%- endif -%}
+
+<div class="p-4 lg:w-1/2 mx-auto">
+  <div class="flex flex-row items-center pt-12 justify-center">
+    <div class="text-sky-800 w-24 flex-none">{% include "menu/temperature-half.svg" %}</div>
+    <h1 class="text-4xl">{{ title }}</h1>
+  </div>
+
+  <div class="text-9xl font-bold text-center drop-shadow-lg animate-pulse animate-bounce text-sky-600">
+    87%
+  </div>
+</div>
+
+{% if content %}
+  <div class="prose-xl  max-w-prose mx-auto px-4">
+    {{ content | markdown | safe }}
+  </div>
+
+{% endif %}
+
+<div class="pagewidth">
+  {% include "components/all.njk" %}
+</div>
+
+{% include "share.njk" %}

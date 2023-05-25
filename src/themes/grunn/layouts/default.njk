@@ -11,7 +11,7 @@ Calls the _base/base.njk that is holding all the basic html
 
 {# isModalOpen is used to test if theres a modal open then disable the scroll #}
 <body
-  class="flex flex-col min-h-screen bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 text-fuchasia-900"
+  class="flex flex-col min-h-screen bg-gradient-to-b from-sky-100 to-white text-sky-900"
   x-data="{'isModalOpen': false, isEditvisible: false}"
   x-on:keydown.escape="isModalOpen=false"
   x-on:keydown.cmd.shift.e="isEditvisible = ! isEditvisible"
@@ -20,12 +20,12 @@ Calls the _base/base.njk that is holding all the basic html
 
   {%- include "header.njk" %}
 
-  <main id="main" tabindex="-1" class="pagewidth flex-grow focus-visible:outline-0">
+  <main id="main" tabindex="-1" class="flex-grow focus-visible:outline-0">
 
     {{ content | safe }}
 
   </main>
 
-  {# {%- include "edit.njk" %} #}
+  {%- include "edit.njk" %}
 
   {%- include "footer.njk" %}
