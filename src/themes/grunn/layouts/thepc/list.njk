@@ -1,0 +1,66 @@
+---
+layout: default.njk
+saga-template-name: PC POST
+---
+
+<section class="grid grid-cols-5 gap-4">
+  {% for item in thepc %}
+
+    <article>
+      {{ loop.index }}
+      <p class="prose-xl bg-slate-100">
+        {{item['mit-sublime-rad-til-pc-er'] }}
+      </p>
+
+      {# tid #}
+      <div class="p-4">
+        {% if  item.select[0] =="lige-nu" %}
+      Lige nu !
+    {% elif item.select[0] == "nu" %}
+        Bare NU !!
+    {% elif item.select[0] == "lige-efter-min-latte-med-havre-maelk-er-blevet-kolig" %}
+      El caffo
+    {% endif %}
+      </div>
+
+      <div class="bg-blue-300">
+        {% if item.select[1] =="frederiksberg-d-familie" %}
+        FRB 2000
+{% set type = "dad" %}
+        {% elif item.select[1] =="osterbro-a"%}
+        2100
+{% set type = "mom" %}
+        {% elif item.select[1] =="lille-norrebro-b"%}
+        2200 og kebab
+{% set type = "young" %}
+        {% elif item.select[1] =="sektor12-tm"%}
+         Sektor 12
+{% set type = "woman" %}
+        {% elif item.select[1] =="101percent-plastique"%}
+        plast fanntast
+
+        {% elif item.select[1] =="lille-vesterbro-c"%}
+      Jeg vil booooo på vesterbro
+        {% set type = "hipster" %}
+        {% endif %}
+
+      </div>
+      {# {% set image = "https://source.unsplash.com/random/300x300/?hipster" %} #}
+      {% set image = "/avatars/" + loop.index + "-64.png" %}
+      <div class="aspect-square overflow-hidden w-16 h-16 rounded-full ">
+        {% picture
+        img = image,
+        width = [300],
+        sizes = "",
+        css = "w-16",
+        loading = "eager"
+ %}
+
+      </div>
+      {{ type }}
+    af {{ item.fra }}
+
+      <time class="text-sm">{{ item.created_at  | formatDate("DDD  T", "DK") }}</time>
+    </article>
+  {% endfor %}
+</section>

@@ -1,0 +1,19 @@
+---
+layout: default.njk
+saga-template-name: PC POST
+---
+<article class="pagewidth pt-8">
+
+  <p class="prose-xl bg-slate-100">
+    {{ quote['mit-sublime-rad-til-pc-er'] }}
+  </p>
+
+  af {{ quote.fra }}
+  <br>
+  dato: {{ quote.created_at }}
+  <br>
+  Hvornår: {{ quote.select[0] }}
+  <br>
+  sektion
+  {{ quote.select[1] }}
+</article>
