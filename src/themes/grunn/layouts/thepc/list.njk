@@ -17,7 +17,7 @@ saga-template-name: PC POST
 
       <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
         <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
-          <img src="/avatars/{{ loop.index }}-64.png" alt="">
+          <img src="/avatars/{{ loop.index }}.png" alt="{{ loop.index }}">
         </div>
 
         <div class="pl-2 flex flex-col w-full h-full">
@@ -44,7 +44,7 @@ saga-template-name: PC POST
   {% endfor %}
 </section>
 
-<section class="grid lg:grid-cols-4 pagewidth">
+<section class="grid md:grid-cols-3 xl:grid-cols-4 pagewidth">
   {% for item in thepc %}
 
     {% set when %}
@@ -75,7 +75,7 @@ saga-template-name: PC POST
 
     <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
       <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
-        <img src="/avatars/{{ loop.index }}-64.png" alt="">
+        <img src="/avatars/{{ loop.index }}.png" alt="">
       </div>
 
       <div class="pl-2 flex flex-col w-full h-full">
@@ -89,11 +89,12 @@ saga-template-name: PC POST
             {{item.fra}} @{{ tribune}}
           </div>
           {# tid #}
-          <div class="text-sm pt-4 text-slate-600">
+          <div class="text pt-4 text-slate-600">
             Hvornår: {{ when }}
           </div>
-          <time class="text-sm pt-4 self-end justify-self-end">
+          <time class="text pt-4 self-end text-slate-400">
             {{ item.created_at  | formatDate("DDD  T", "DK") }}
+            | msg: {{ loop.index}}
           </time>
         </div>
       </div>
