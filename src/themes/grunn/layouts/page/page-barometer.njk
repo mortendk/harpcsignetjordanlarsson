@@ -10,7 +10,8 @@ This is the default template for the page type
   <!-- ___layouts/page/page.njk  -->
 {%- endif -%}
 
-<div class="p-4 lg:w-1/2 mx-auto">
+<article class="p-4 lg:w-1/2 mx-auto">
+
   <div class="flex flex-row items-center pt-12 justify-center">
     <div class="text-sky-800 w-24 flex-none">{% include "menu/temperature-half.svg" %}</div>
     <h1 class="text-4xl">{{ title }}</h1>
@@ -24,13 +25,12 @@ This is the default template for the page type
     92%
   </div>
 
-</div>
+</article>
 
 {% if content %}
   <div class="prose-xl px-4">
     {{ content | markdown | safe }}
   </div>
-
 {% endif %}
 
 <div class="pagewidth">
