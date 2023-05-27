@@ -2,65 +2,102 @@
 layout: default.njk
 saga-template-name: PC POST
 ---
+<h1 class="text-center text-5xl lg:text-8xl pt-12 pb-4 pagewidth drop-shadow-sm">
+  Kære (the) PC !
+</h1>
+<div class="prose-xl pagewidth max-w-prose ">
+  Kære the PC vi ved du vil københavn det bedste ligesom alle dem her som  gerne vil hjælpe dig
+  med lidt kyndig rådgivning med de her <span class="text-sky-600 font-bold">{{ thepc | length }}
+  </span> tanker fra københavn.
+</div>
 
-<section class="grid grid-cols-5 gap-4">
+<section class="grid lg:grid-cols-2 pagewidth">
+  {% for item in collections.quotes %}
+    {% if (loop.index <= 3) %}
+
+      <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+        <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
+          <img src="/avatars/{{ loop.index }}-64.png" alt="">
+        </div>
+
+        <div class="pl-2 flex flex-col w-full h-full">
+          <div class="pb-4">
+            <div class="prose-xl">
+              {{ item.templateContent |safe  }}
+            </div>
+            <div class="text-base font-bold border-t pt-5 text-slate-600">
+              {{ item.data.name }} @{{ item.data.tribune }}
+            </div>
+            {# tid #}
+            {# <div class="text-sm pt-4 text-slate-600">
+            Hvornår: {{ when }}
+            </div> #}
+            {# <time class="text-sm pt-4 self-end justify-self-end">
+              {{ item.data.time  | formatDate("DDD  T", "DK") }}
+            </time> #}
+          </div>
+        </div>
+
+      </article>
+
+    {% endif %}
+  {% endfor %}
+</section>
+
+<section class="grid lg:grid-cols-4 pagewidth">
   {% for item in thepc %}
 
-    <article>
-      {{ loop.index }}
-      <p class="prose-xl bg-slate-100">
-        {{item['mit-sublime-rad-til-pc-er'] }}
-      </p>
-
-      {# tid #}
-      <div class="p-4">
-        {% if  item.select[0] =="lige-nu" %}
-      Lige nu !
-    {% elif item.select[0] == "nu" %}
+    {% set when %}
+    {% if  item.select[0] =="lige-nu" %}
+        Lige nu !
+      {% elif item.select[0] == "nu" %}
         Bare NU !!
-    {% elif item.select[0] == "lige-efter-min-latte-med-havre-maelk-er-blevet-kolig" %}
-      El caffo
+      {% elif item.select[0] == "lige-efter-min-latte-med-havre-maelk-er-blevet-kolig" %}
+        Lige efter min latte med havre maelk er blevet kolig
+      {% endif %}
+    {% endset %}
+
+    {% set tribune %}
+    {% if item.select[1] =="frederiksberg-d-familie" %}
+      Fam tribunen
+    {% elif item.select[1] =="osterbro-a"%}
+      A tribunen
+    {% elif item.select[1] =="lille-norrebro-b"%}
+      B tribunen
+    {% elif item.select[1] =="sektor12-tm"%}
+      Sektor 12
+    {% elif item.select[1] =="101percent-plastique"%}
+      københavn
+    {% elif item.select[1] =="lille-vesterbro-c"%}
+      Nedre C
     {% endif %}
+    {% endset %}
+
+    <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+      <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
+        <img src="/avatars/{{ loop.index }}-64.png" alt="">
       </div>
 
-      <div class="bg-blue-300">
-        {% if item.select[1] =="frederiksberg-d-familie" %}
-        FRB 2000
-{% set type = "dad" %}
-        {% elif item.select[1] =="osterbro-a"%}
-        2100
-{% set type = "mom" %}
-        {% elif item.select[1] =="lille-norrebro-b"%}
-        2200 og kebab
-{% set type = "young" %}
-        {% elif item.select[1] =="sektor12-tm"%}
-         Sektor 12
-{% set type = "woman" %}
-        {% elif item.select[1] =="101percent-plastique"%}
-        plast fanntast
-
-        {% elif item.select[1] =="lille-vesterbro-c"%}
-      Jeg vil booooo på vesterbro
-        {% set type = "hipster" %}
-        {% endif %}
-
+      <div class="pl-2 flex flex-col w-full h-full">
+        <div class="pb-4">
+          <div class="prose-xl">
+            {{ item['mit-sublime-rad-til-pc-er']  }}
+            {# {{ item['mit-sublime-rad-til-pc-er'] | safe | truncate(200, true, "?") }} #}
+            ...
+          </div>
+          <div class="text-base font-bold border-t pt-5 text-slate-600">
+            {{item.fra}} @{{ tribune}}
+          </div>
+          {# tid #}
+          <div class="text-sm pt-4 text-slate-600">
+            Hvornår: {{ when }}
+          </div>
+          <time class="text-sm pt-4 self-end justify-self-end">
+            {{ item.created_at  | formatDate("DDD  T", "DK") }}
+          </time>
+        </div>
       </div>
-      {# {% set image = "https://source.unsplash.com/random/300x300/?hipster" %} #}
-      {% set image = "/avatars/" + loop.index + "-64.png" %}
-      <div class="aspect-square overflow-hidden w-16 h-16 rounded-full ">
-        {% picture
-        img = image,
-        width = [300],
-        sizes = "",
-        css = "w-16",
-        loading = "eager"
- %}
 
-      </div>
-      {{ type }}
-    af {{ item.fra }}
-
-      <time class="text-sm">{{ item.created_at  | formatDate("DDD  T", "DK") }}</time>
     </article>
   {% endfor %}
 </section>
