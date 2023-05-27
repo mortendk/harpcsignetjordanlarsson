@@ -3165,6 +3165,11 @@ pre[class*="language-"] {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-pink-600 {
+  --tw-text-opacity: 1;
+  color: rgb(219 39 119 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }

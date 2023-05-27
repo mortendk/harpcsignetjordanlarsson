@@ -17,69 +17,69 @@ saga-template-name: Frontpage
     Skriv til PC
     </a>
   </div> #}
-  <div class=" h-1/2"
+
   <div class="w-3/4 h-full bg-white/50 absolute animate-pulse"></div>
-    {% if image %}
-      <div class="aspect-video overflow-hidden">
-        {% picture
+  {% if image %}
+    <div class="aspect-video overflow-hidden">
+      {% picture
       img=image,
       width=[640,1024, 1563],
       sizes="(max-width: 640px) 50vw, 100vw",
       css="w-full",
       loading = "eager"
   %}
-      </div>
-    {% endif %}
+    </div>
+  {% endif %}
 
-  </div>
+</div>
 
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
-  <script>
-    var typed = new Typed('#element', {
-      strings: [
-        'Har PC signet', 'Har the PC signet med Jordan Larsson ? ... <br>Nej ikke endnu!'
-      ],
-      typeSpeed: 50,
-      smartBackspace: true
-    });
-  </script>
+<script>
+  var typed = new Typed('#element', {
+    strings: [
+      'Har PC signet', 'Har the PC signet med Jordan Larsson ? ... <br>Nej ikke endnu!'
+    ],
+    typeSpeed: 50,
+    smartBackspace: true
+  });
+</script>
 
-  <div class="pagewidth">
-    {% include "components/all.njk" %}
-  </div>
+<div class="pagewidth">
+  {% include "components/all.njk" %}
+</div>
 
-  <h3 class="text-3xl pagewidth text-center">Hørt på tribunerne</h3>
-  <section class="lg:grid lg:grid-cols-3 lg:gap-4 pagewidth">
-    {# List all the Quotes we like #}
-    {% for item in collections.quotes %}
-      {% if (loop.index <= 3) %}
+<h3 class="text-3xl pagewidth text-center">Hørt på tribunerne</h3>
+<section class="lg:grid lg:grid-cols-3 lg:gap-4 pagewidth">
+  {# List all the Quotes we like #}
+  {% for item in collections.quotes %}
+    {% if (loop.index <= 3) %}
 
-        <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
-          <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
-            <img src="/avatars/{{ loop.index }}-64.png" alt="">
-          </div>
+      <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+        <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
+          <img src="/avatars/{{ loop.index }}-64.png" alt="">
+        </div>
 
-          <div class="pl-2 flex flex-col w-full h-full">
-            <div class="pb-4">
-              <div class="prose-xl">
-                {{ item.templateContent |safe  }}
-              </div>
-              <div class="text-base font-bold border-t pt-5 text-slate-600">
-                {{ item.data.name }} @{{ item.data.tribune }}
-              </div>
-              {# tid #}
-              {# <div class="text-sm pt-4 text-slate-600">
+        <div class="pl-2 flex flex-col w-full h-full">
+          <div class="pb-4">
+            <div class="prose-xl">
+              {{ item.templateContent |safe  }}
+            </div>
+            <div class="text-base font-bold border-t pt-5 text-slate-600">
+              {{ item.data.name }} @{{ item.data.tribune }}
+            </div>
+            {# tid #}
+            {# <div class="text-sm pt-4 text-slate-600">
             Hvornår: {{ when }}
             </div> #}
-              {# <time class="text-sm pt-4 self-end justify-self-end">
+            {# <time class="text-sm pt-4 self-end justify-self-end">
               {{ item.data.time  | formatDate("DDD  T", "DK") }}
             </time> #}
-            </div>
           </div>
+        </div>
 
-        </article>
+      </article>
 
-      {% endif %}
-    {% endfor %}
-  </section>
+    {% endif %}
+  {% endfor %}
+</section>
