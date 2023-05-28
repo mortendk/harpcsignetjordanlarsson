@@ -29,6 +29,7 @@
         {% if item.target %}
           target="_blank" rel="noopener"
         {% endif %}
+        aria-label="{{ item.title }}"
       >
           {% if item.icon %}
             <div class="w-8 hover:text-purple-800 {% if item.url in page.url %}text-slate-800 {% else %}text-white {% endif %}">
