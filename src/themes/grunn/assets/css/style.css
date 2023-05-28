@@ -2231,6 +2231,14 @@ pre[class*="language-"] {
   height: 100vh;
 }
 
+.h-\[65\] {
+  height: 65;
+}
+
+.h-\[64px\] {
+  height: 64px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2301,6 +2309,14 @@ pre[class*="language-"] {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[64\] {
+  width: 64;
+}
+
+.w-\[64px\] {
+  width: 64px;
 }
 
 .max-w-2xl {
