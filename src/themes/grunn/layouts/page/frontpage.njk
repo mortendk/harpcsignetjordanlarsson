@@ -50,12 +50,12 @@ saga-template-name: Frontpage
 </div>
 
 <h3 class="text-3xl pagewidth text-center">Hørt på tribunerne</h3>
-<section class="lg:grid lg:grid-cols-3 lg:gap-4 pagewidth">
+<section class="grid lg:grid-cols-3 gap-4 pagewidth">
   {# List all the Quotes we like #}
   {% for item in collections.quotes %}
     {% if (loop.index <= 3) %}
 
-      <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+      <article class="p-4 shadow-lg border border-pink-100 flex flex-row bg-white">
         <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
           <img src="/avatars/{{ loop.index }}-64.png" alt="">
         </div>

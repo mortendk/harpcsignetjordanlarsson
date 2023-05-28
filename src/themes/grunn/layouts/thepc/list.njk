@@ -5,18 +5,16 @@ saga-template-name: PC POST
 <h1 class="text-center text-5xl lg:text-8xl pt-12 pb-4 pagewidth drop-shadow-sm">
   Kære (the) PC !
 </h1>
-<div class="prose-xl pagewidth max-w-prose ">
-  Kære the PC
-  <br>
+<div class="prose-xl pagewidth max-w-prose pb-4">
   vi ved du vil københavn det bedste - Her har vi samlet lidt kyndig rådgivning med de her <span class="text-sky-600 font-bold">{{ thepc | length }}
   </span> tanker fra hele københavn.
 </div>
 
-<section class="grid lg:grid-cols-2 pagewidth">
+<section class="grid lg:grid-cols-2 pagewidth gap-4">
   {% for item in collections.quotes %}
     {% if (loop.index <= 3) %}
 
-      <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+      <article class="p-4 mb-4 shadow-lg border border-pink-100 flex flex-row bg-white">
         <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
           <img src="/avatars/{{ loop.index }}.png" alt="{{ loop.index }}">
         </div>
@@ -38,7 +36,7 @@ saga-template-name: PC POST
   {% endfor %}
 </section>
 
-<section class="grid lg:grid-cols-3 pagewidth">
+<section class="grid lg:grid-cols-2 xl:grid-cols-3 pagewidth gap-4">
   {% for item in thepc %}
 
     {% set when %}
@@ -67,7 +65,7 @@ saga-template-name: PC POST
     {% endif %}
     {% endset %}
 
-    <article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+    <article class="p-4 shadow-lg border border-pink-100 flex flex-row bg-white">
       <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
         <img src="/avatars/{{ loop.index }}.png" alt="">
       </div>
@@ -76,22 +74,18 @@ saga-template-name: PC POST
         <div class="pb-4">
           <div class="prose-xl">
             {{ item['mit-sublime-rad-til-pc-er']  }}
-            {# {{ item['mit-sublime-rad-til-pc-er'] | safe | truncate(200, true, "?") }} #}
-            ...
           </div>
-          <div class="text-base font-bold border-t pt-5 text-slate-600">
+          <div class="text-base font-bold pt-5 text-slate-600">
             {{item.fra}} @{{ tribune}}
           </div>
           {# tid #}
           <div class="text pt-4 text-slate-600">
             Hvornår: {{ when }}
           </div>
-          <time class="text pt-4 self-end text-slate-400">
+          {# <time class="text pt-4 self-end text-slate-400">
             {{ item.created_at  | formatDate("DD  T", "DA") }}
-            | msg: {{ loop.index}}
-
-          </time>
-          <a href="/thepc-text/{{ item.created_at | slugify }}">link</a>
+          </time> #}
+          <a href="/thepc-text/{{ item.created_at | slugify }}" class="text-sm text-slate-500">link</a>
 
         </div>
       </div>
