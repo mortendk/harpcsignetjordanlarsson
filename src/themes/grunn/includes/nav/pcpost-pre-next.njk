@@ -6,13 +6,13 @@ A simple pre / next nav for collections
 {%- if env.mode != 'prod' %}
   <!-- __includes/nav/post-pre-next.njk  -->
 {%- endif  -%}
-
-{%- if collections.allPcPost %}
+PRE
+{%- if collections.thepc %}
 
   <nav class="flex flex-row justify-between w-full p-4" aria-label="Pre and Next post">
     {#  #}
-    {%- set nextPost = collections.allPcPost | getNextCollectionItem(page) %}
-    {%- set previousPost = collections.allPcPost | getPreviousCollectionItem(page) %}
+    {%- set nextPost = collections.thepc | getNextCollectionItem(page) %}
+    {%- set previousPost = collections.thepc | getPreviousCollectionItem(page) %}
 
     {%- if nextPost or previousPost %}
       {# previous  link #}
