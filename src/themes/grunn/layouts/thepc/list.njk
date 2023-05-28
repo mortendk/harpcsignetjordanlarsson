@@ -25,7 +25,7 @@ saga-template-name: PC POST
               {{ item.templateContent |safe  }}
             </div>
             <div class="text-base font-bold border-t pt-5 text-slate-600">
-              {{ item.data.name | replace("-", " ") }} @{{ item.data.tribune | replace("-", " ") }}
+              {{ item.data.name | replace("-", " ") }}
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@ saga-template-name: PC POST
     {% endif %}
     {% endset %}
 
-    <article class="p-4 shadow-lg border border-pink-100 flex flex-row bg-white">
+    <article class="p-4 shadow-lg border border-pink-100 flex flex-col lg:flex-row  bg-white">
       <div class="flex-none w-16 h-16 rounded-full shadow-lg border border-sky-400">
         <img src="/avatars/{{ loop.index }}.png" alt="">
       </div>
@@ -76,7 +76,7 @@ saga-template-name: PC POST
             {{ item['mit-sublime-rad-til-pc-er']  }}
           </div>
           <div class="text-base font-bold pt-5 text-slate-600">
-            {{item.fra}} @{{ tribune}}
+            {{ item.fra | replace("-", " ") }} @{{ tribune | replace("-", " ") }}
           </div>
           {# tid #}
           <div class="text pt-4 text-slate-600">
