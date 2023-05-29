@@ -1,26 +1,31 @@
 ---
-layout: default.njk
 saga-template-name: PC POST
 ---
-{# {% extends "../html-og.njk" %}
- #}
-{# {% block opengraph %}
-  {{ quote['mit-sublime-rad-til-pc-er'] }}
-{% endblock %} #}
+{% extends "../html-og.njk" %}
 
-{# {% block content %} #}
-{% set when %}
-{% if  quote.select[0] =="lige-nu" %}
+{% block opengraph %}
+
+  {%- set quotetitle = quote['mit-sublime-rad-til-pc-er'] |truncate(60,'true') | replace("\n", " ")  -%}
+  {%- set quotecontent = quote['mit-sublime-rad-til-pc-er'] | replace("\n", " ") -%}
+
+  {%- include "src/system/head/opengraph.njk" -%}
+
+{% endblock %}
+{% block content %}
+
+  {# {% block content %} #}
+  {% set when %}
+  {% if  quote.select[0] =="lige-nu" %}
       Lige nu !
     {% elif quote.select[0] == "nu" %}
       Bare NU !!
     {% elif quote.select[0] == "lige-efter-min-latte-med-havre-maelk-er-blevet-kolig" %}
       Lige efter min latte med havre maelk er blevet kolig
     {% endif %}
-{% endset %}
+  {% endset %}
 
-{% set tribune %}
-{% if quote.select[1] =="frederiksberg-d-familie" %}
+  {% set tribune %}
+  {% if quote.select[1] =="frederiksberg-d-familie" %}
     Fam tribunen
   {% elif quote.select[1] =="osterbro-a"%}
     A tribunen
@@ -33,39 +38,39 @@ saga-template-name: PC POST
   {% elif quote.select[1] =="lille-vesterbro-c"%}
     Nedre C
   {% endif %}
-{% endset %}
+  {% endset %}
 
-<h1 class="text-center text-5xl lg:text-8xl pt-12 pb-4 pagewidth drop-shadow-sm">
+  <h1 class="text-center text-5xl lg:text-8xl pt-12 pb-4 pagewidth drop-shadow-sm">
   Kære (the) PC !
 </h1>
-<div class="prose-xl pagewidth max-w-prose "></div>
+  <div class="prose-xl pagewidth max-w-prose "></div>
 
-<article class="p-4 shadow-lg border border-pink-100 flex flex-row bg-white mx-4 lg:mx-auto lg:w-1/2 mt-20">
+  <article class="p-4 shadow-lg border border-pink-100 flex flex-row bg-white mx-4 lg:mx-auto lg:w-1/2 mt-20">
 
-  {% set number = pagination.pageNumber + 1 %}
-  <div class="flex-none w-16 h-16 rounded-full shadow-lg">
-    <img src="/avatars/{{number}}.png" alt="Avatar" loading="eager" width="64" height="64">
-  </div>
-
-  <div class="pl-2 flex flex-col w-full h-full">
-    <div class="pb-4">
-      <div class="prose-xl">
-        {{ quote['mit-sublime-rad-til-pc-er'] }}
-      </div>
-      <div class="text-base font-bold border-t pt-5 text-slate-600">
-        {{quote.fra}} @{{ tribune}}
-      </div>
-      {# tid #}
-      <div class="text pt-4 text-slate-600">
-        Hvornår: {{ when }}
-      </div>
-      <time class="text pt-4 self-end text-slate-400">
-        {{ quote.created_at  | formatDate("DD  T", "DA") }}
-      </time>
-
+    {% set number = pagination.pageNumber + 1 %}
+    <div class="flex-none w-16 h-16 rounded-full shadow-lg">
+      <img src="/avatars/{{number}}.png" alt="Avatar" loading="eager" width="64" height="64">
     </div>
-  </div>
 
-</article>
+    <div class="pl-2 flex flex-col w-full h-full">
+      <div class="pb-4">
+        <div class="prose-xl">
+          {{ quote['mit-sublime-rad-til-pc-er'] }}
+        </div>
+        <div class="text-base font-bold border-t pt-5 text-slate-600">
+          {{quote.fra}} @{{ tribune}}
+        </div>
+        {# tid #}
+        <div class="text pt-4 text-slate-600">
+        Hvornår: {{ when }}
+        </div>
+        <time class="text pt-4 self-end text-slate-400">
+          {{ quote.created_at  | formatDate("DD  T", "DA") }}
+        </time>
 
-{% include "share.njk" %}
+      </div>
+    </div>
+
+  </article>
+  {% include "share.njk" %}
+{% endblock %}

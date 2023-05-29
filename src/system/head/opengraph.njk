@@ -9,7 +9,9 @@ Global header for the site
 {% set ogurl = env.url + page.url %}
 
 {%- set ogtitle -%}
-{%- if card.title %}
+{%- if quotetitle %}
+  {{- quotetitle -}}
+{%- elif card.title %}
   {{- card.title -}}
 {% else %}
   {{- site.title -}}
@@ -17,7 +19,9 @@ Global header for the site
 {%- endset %}
 
 {%- set ogdescription -%}
-{%- if card.text -%}
+{%- if quotecontent -%}
+  {{- quotecontent -}}
+{%- elif card.text -%}
   {{- card.text -}}
 {% else  %}
   {{- site.description -}}
