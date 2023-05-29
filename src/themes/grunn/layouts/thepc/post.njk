@@ -5,7 +5,7 @@ saga-template-name: PC POST
 
 {% block opengraph %}
 
-  {%- set quotetitle = quote['mit-sublime-rad-til-pc-er'] |truncate(60,'true') | replace("\n", " ")  -%}
+  {%- set quotetitle = quote['fra'] |truncate(30,'true') | replace("-", " ")  -%}
   {%- set quotecontent = quote['mit-sublime-rad-til-pc-er'] | replace("\n", " ") -%}
 
   {%- include "src/system/head/opengraph.njk" -%}
@@ -58,7 +58,7 @@ saga-template-name: PC POST
           {{ quote['mit-sublime-rad-til-pc-er'] }}
         </div>
         <div class="text-base font-bold border-t pt-5 text-slate-600">
-          {{quote.fra}} @{{ tribune}}
+          {{quote.fra | replace("-", ' ')}} @{{ tribune}}
         </div>
         {# tid #}
         <div class="text pt-4 text-slate-600">
