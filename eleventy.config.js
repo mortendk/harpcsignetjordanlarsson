@@ -146,6 +146,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.delete("src/themes/"  + theme );
 
 
+
+
   // Directory setup
   return {
     markdownTemplateEngine: "njk",

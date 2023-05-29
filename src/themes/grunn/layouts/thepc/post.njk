@@ -2,6 +2,13 @@
 layout: default.njk
 saga-template-name: PC POST
 ---
+{# {% extends "../html-og.njk" %}
+ #}
+{# {% block opengraph %}
+  {{ quote['mit-sublime-rad-til-pc-er'] }}
+{% endblock %} #}
+
+{# {% block content %} #}
 {% set when %}
 {% if  quote.select[0] =="lige-nu" %}
       Lige nu !
@@ -33,9 +40,11 @@ saga-template-name: PC POST
 </h1>
 <div class="prose-xl pagewidth max-w-prose "></div>
 
-<article class="p-4 m-4 shadow-lg border border-pink-100 flex flex-row bg-white w-1/2 mx-auto mt-20">
+<article class="p-4 shadow-lg border border-pink-100 flex flex-row bg-white mx-4 lg:mx-auto lg:w-1/2 mt-20">
+
+  {% set number = pagination.pageNumber + 1 %}
   <div class="flex-none w-16 h-16 rounded-full shadow-lg">
-    <img src="/avatars/1.png" alt="Avatar" loading="eager">
+    <img src="/avatars/{{number}}.png" alt="Avatar" loading="eager" width="64" height="64">
   </div>
 
   <div class="pl-2 flex flex-col w-full h-full">
@@ -59,7 +68,4 @@ saga-template-name: PC POST
 
 </article>
 
-{# Pre next nav #}
-{# {% include "nav/pcpost-pre-next.njk" %} #}
-{% include "share.njk" %}</div>
-</article>
+{% include "share.njk" %}

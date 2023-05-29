@@ -4,5 +4,8 @@ pagination:
   alias: quote
   size: 1
 layout: thepc/post.njk
-permalink: 'thepc-text/{{ quote.created_at | slugify }}/'
+permalink: 'thepc-text/{{ quote.fra | slugify }}-{{ pagination.pageNumber }}/'
+card:
+  title: Larsson Quotes
+  text: quote.created_at
 ---

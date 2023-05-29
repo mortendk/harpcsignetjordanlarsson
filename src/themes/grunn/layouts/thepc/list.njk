@@ -85,8 +85,8 @@ saga-template-name: PC POST
           {# <time class="text pt-4 self-end text-slate-400">
             {{ item.created_at  | formatDate("DD  T", "DA") }}
           </time> #}
-          <a href="/thepc-text/{{ item.created_at | slugify }}" class="text-sm text-slate-500">link</a>
-
+          {# <a href="/thepc-text/{{ item.created_at | slugify }}" class="text-sm text-slate-500">link</a> #}
+          <a href="/thepc-text/{{ item.fra | slugify }}-{{ loop.index0 }}/" class="text-sm text-slate-500">link</a>
         </div>
       </div>
 
