@@ -4,5 +4,5 @@ pagination:
   alias: quote
   size: 1
 layout: thepc/post.njk
-permalink: 'thepc-text/{{ quote.fra | slugify }}-{{ pagination.pageNumber }}/'
+permalink: 'thepc-text/{{ quote.fra | replace("#", " ") | slugify  }}-{{ pagination.pageNumber }}/'
 ---
