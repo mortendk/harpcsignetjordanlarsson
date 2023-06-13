@@ -10,7 +10,7 @@ tags:
   - news
 date: 2023-05-25 15:43:36
 layout: post/post.njk
-eleventyExcludeFromCollections: false
+eleventyExcludeFromCollections: true
 ---
 Vi har siden sen eftermiddag den 23 Maj haft 5000 unikke besøgende igennem tælle apperatet og har modtaget over 400 beskeder om et  ønske om Jordan Larsson og FC København får lavet en aftale.
 

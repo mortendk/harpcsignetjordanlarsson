@@ -9,6 +9,7 @@ eleventyNavigation:
   parent: main
   title: jordan Barometer
   icon: menu/temperature-half.svg
+  order: 30
 layout: page/page-barometer.njk
 eleventyExcludeFromCollections: false
 ---

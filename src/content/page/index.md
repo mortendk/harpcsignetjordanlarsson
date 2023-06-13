@@ -7,7 +7,10 @@ card:
   alt: Jordan Larsson
   text: Har PC signet Med Jordan Larsson ?
 components:
-
+  - type: collection
+    title: ""
+    template: components/collection/collection.njk
+    collection: news
 tags:
   - saga11
   - test
