@@ -57,5 +57,5 @@ eleventyNavigation:
   excerpt: Skriv til pc
   icon: menu/paper-plane.svg
 layout: page/page.njk
-eleventyExcludeFromCollections: false
+eleventyExcludeFromCollections: true
 ---
