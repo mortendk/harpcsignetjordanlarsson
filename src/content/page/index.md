@@ -1,6 +1,6 @@
 ---
 title: Har PC signet Med Jordan Larsson ?
-image: /upload/Martin-Sylvest-Ritzau-Scanpix.jpeg
+image: /upload/230128_jordan-signing-5.jpg
 card:
   title: Har PC signet Med Jordan Larsson ?
   image: ""
